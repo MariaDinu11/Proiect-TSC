@@ -77,3 +77,42 @@ OpenBook este un e-book reader open source si accesibil, proiectat pentru a ofer
    - Conector Qwiic/Stemma QT pentru expansiune
    - Trei butoane tactile pentru navigare
 
+
+### Tabel detaliat al utilizarii pinilor
+
+| Pin ESP32-C6 | Functie | Conectat la | Justificare |
+|--------------|---------|-------------|-------------|
+| GPIO 0 | IO/BOOT | Buton BOOT | Pin special cu functie de Boot necesar pentru intrarea in modul de programare |
+| GPIO 1 | FLASH_CS | Memorie Flash W25Q512JVEIQ | Chip Select pentru memoria Flash externa, pozitionat logic in apropierea celorlalti pini SPI |
+| GPIO 2 | EN | Circuit supervisor BD5229G-TR | Semnal de Enable pentru microcontroller, controlat de supervizorul de tensiune |
+| GPIO 3 | SDA | Magistrala I²C | Linie de date pentru interfata I²C care conecteaza senzorul BME688, RTC-ul si monitorul bateriei |
+| GPIO 4 | SCL | Magistrala I²C | Linie de clock pentru interfata I²C, cu rezistori pull-up adecvati |
+| GPIO 5 | MOSI | Interfata SPI (Flash, E-Paper, SD) | Master Out Slave In pentru comunicatiile SPI, folosit pentru toate dispozitivele SPI |
+| GPIO 6 | MISO | Interfata SPI (Flash, SD) | Master In Slave Out pentru comunicatiile SPI, primeste date de la perifericele SPI |
+| GPIO 7 | SCK | Interfata SPI (Flash, E-Paper, SD) | Clock pentru interfata SPI, sincronizeaza toate dispozitivele SPI |
+| GPIO 8 | USB_D+ | Interfata USB | Linie de date pozitiva USB, conectata la conectorul USB-C prin protectie ESD |
+| GPIO 9 | USB_D- | Interfata USB | Linie de date negativa USB, conectata la conectorul USB-C prin protectie ESD |
+| GPIO 10 | EPD_CS | E-Paper Display | Chip Select pentru display-ul e-paper, activeaza comunicatia SPI cu acesta |
+| GPIO 11 | SS_SD | Card SD | Chip Select pentru cardul SD, permite selectarea independenta a cardului pe magistrala SPI comuna |
+| GPIO 12 | EPD_DC | E-Paper Display | Data/Command pentru e-paper, diferentiaza intre comenzi si date pe magistrala SPI |
+| GPIO 13 | EPD_RST | E-Paper Display | Reset pentru e-paper, permite reinitializarea hardware a display-ului |
+| GPIO 15 | INT_RTC | Modul RTC DS3231SN | Interrupt de la RTC, permite trezirea din sleep la alarme sau evenimente temporizate |
+| GPIO 16 | TXD0 | UART Debug/Test | Transmit pentru UART, folosit pentru debug si diagnosticare |
+| GPIO 17 | RXD0 | UART Debug/Test | Receive pentru UART, folosit pentru debug si diagnosticare |
+| GPIO 18 | EPD_BUSY | E-Paper Display | Semnal Busy de la e-paper, indica cand display-ul proceseaza date |
+| GPIO 19 | IO/CHANGE | Buton CHANGE | Intrare pentru butonul de schimbare a optiunilor, cu pull-up intern |
+| GPIO 21-23 | Test Pads | Puncte de testare | Pini disponibili pentru testare si diagnosticare |
+
+## Decizii și modificări de design
+
+* Am poziționat componentele principale conform specificațiilor pentru a asigura compatibilitatea perfectă între dimensiunile PCB-ului și carcasă. Bateria a fost plasată în spațiul rămas disponibil.
+
+* Am creat planuri de masă atât pe straturile superioare cât și inferioare pentru a îmbunătăți integritatea semnalului și a reduce zgomotul electromagnetic.
+
+* Rutarea a fost realizată pe ambele straturi, însă am plasat traseele de putere exclusiv pe stratul superior pentru a evita utilizarea via-urilor, conform recomandărilor.
+
+* Am modificat dimensiunile pad-urilor pentru diode la 35 x 190 mil pentru a îmbunătăți procesul de fabricație și fiabilitatea contactelor electrice.
+
+* Pentru circuitul MAX17048G+T10, am ajustat lățimea pad-urilor pentru a corespunde cu lățimea traseului VBAT de 0.3 mm, asigurând o rutare consecventă și un layout mai echilibrat.
+
+![Screenshot 2025-04-06 195020](https://github.com/user-attachments/assets/538a7354-0768-4f40-b5d7-98b532e3505a)
