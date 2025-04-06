@@ -46,3 +46,34 @@ OpenBook este un e-book reader open source si accesibil, proiectat pentru a ofer
 | 35 | Capacitor 100µF TANT | SMD CT3528 | 1 | [Model](https://a360.co/4iZy6AA) | - |
 | 36 | Test pads | Puncte de testare TP20R | 17 | [Model](https://www.keyelco.com/product.cfm/product_id/1543) | - |
 | 37 | SMD Solder Jumper | Jumper SMD | 1 | [Model](https://grabcad.com/library/solder-jumpers-1) | - |
+
+## Functionalitatea Hardware
+
+### Componente Principale
+
+1. **Microcontroller ESP32-C6**
+   - Procesor RISC-V cu 8MB Flash
+   - WiFi 6 (802.11ax), Bluetooth 5, suport Zigbee si Thread
+   - Management optimizat al energiei pentru durata de viata a bateriei
+
+2. **Interfata Display E-Paper**
+   - Conectata prin interfata SPI si semnale de control dedicate
+   - Circuit special pentru generarea tensiunilor e-paper
+   - Consum de energie aproape zero in stare statica
+
+3. **Sistem de Stocare**
+   - Flash extern 64MB (W25Q512JVEIQ) pentru fonturi si elemente UI
+   - Slot card MicroSD pentru biblioteca extinsa de carti
+
+4. **Management Energie**
+   - Circuit incarcare baterie LiPo folosind MCP73831
+   - Regulator de tensiune XC6220A331MR-G pentru 3.3V stabil
+   - MAX17048G+T10 pentru monitorizare precisa a nivelului bateriei
+   - Moduri deep sleep pentru durata extinsa de viata a bateriei
+
+5. **Periferice Auxiliare**
+   - Senzor de mediu BME688 (temperatura, umiditate, calitatea aerului)
+   - Modul RTC DS3231SN de precizie inalta
+   - Conector Qwiic/Stemma QT pentru expansiune
+   - Trei butoane tactile pentru navigare
+
