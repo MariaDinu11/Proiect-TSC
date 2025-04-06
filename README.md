@@ -103,16 +103,11 @@ OpenBook este un e-book reader open source si accesibil, proiectat pentru a ofer
 | GPIO 19 | IO/CHANGE | Buton CHANGE | Intrare pentru butonul de schimbare a optiunilor, cu pull-up intern |
 | GPIO 21-23 | Test Pads | Puncte de testare | Pini disponibili pentru testare si diagnosticare |
 
-## Decizii și modificări de design
-
-* Am poziționat componentele principale conform specificațiilor pentru a asigura compatibilitatea perfectă între dimensiunile PCB-ului și carcasă. Bateria a fost plasată în spațiul rămas disponibil.
-
-* Am creat planuri de masă atât pe straturile superioare cât și inferioare pentru a îmbunătăți integritatea semnalului și a reduce zgomotul electromagnetic.
-
-* Rutarea a fost realizată pe ambele straturi, însă am plasat traseele de putere exclusiv pe stratul superior pentru a evita utilizarea via-urilor, conform recomandărilor.
-
-* Am modificat dimensiunile pad-urilor pentru diode la 35 x 190 mil pentru a îmbunătăți procesul de fabricație și fiabilitatea contactelor electrice.
-
-* Pentru circuitul MAX17048G+T10, am ajustat lățimea pad-urilor pentru a corespunde cu lățimea traseului VBAT de 0.3 mm, asigurând o rutare consecventă și un layout mai echilibrat.
+## Decizii si modificari de design
+* Am pozitionat componentele principale conform specificatiilor pentru a asigura compatibilitatea perfecta intre dimensiunile PCB-ului si carcasa. Bateria a fost plasata in spatiul ramas disponibil.
+* Am creat planuri de masa atat pe straturile superioare cat si inferioare pentru a imbunatati integritatea semnalului si a reduce zgomotul electromagnetic.
+* Rutarea a fost realizata pe ambele straturi, insa am plasat traseele de putere exclusiv pe stratul superior pentru a evita utilizarea via-urilor, conform recomandarilor.
+* Am modificat dimensiunile pad-urilor pentru diode la 35 x 190 mil pentru a imbunatati procesul de fabricatie si fiabilitatea contactelor electrice.
+* Pentru circuitul MAX17048G+T10, am ajustat latimea pad-urilor pentru a corespunde cu latimea traseului VBAT de 0.3 mm, asigurand o rutare consecventa si un layout mai echilibrat.
 
 ![Screenshot 2025-04-06 195020](https://github.com/user-attachments/assets/538a7354-0768-4f40-b5d7-98b532e3505a)
